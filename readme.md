@@ -1,6 +1,5 @@
 # Synchronous setTimeout loop
 
------------
 
 In javascript, loops like for...of are asynchronous, which means that setTimeout will not work properly if you use it in a loop. If you want to loop through an array or a string synchronously, you have to come up with another solution. 
 
