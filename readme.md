@@ -17,9 +17,7 @@ Feel free to contact me with any comment, suggestion or alternative technique.
 # Code you can copy and adapt to your needs 
 
 ```
-function main(){
-  syncTimeout(yourArray, 0);
-});
+syncTimeout(yourArray, 0);
 
 function syncTimeout(array, i){
   if (i < array.length) {
