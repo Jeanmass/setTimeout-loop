@@ -22,10 +22,10 @@ function main(){
 });
 
 function syncTimeout(array, i){
-  i = i+1;
   if (i < array.length) {
     setTimeout(function(){
       whateverYouwant();
+      i = i+1;
       synTimeout(array, i);
     }, 100);
   } else {
