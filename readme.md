@@ -18,7 +18,7 @@ Feel free to contact me with any comment, suggestion or alternative technique.
 
 ```
 function main(){
-  syncTimeout(array, 0);
+  syncTimeout(yourArray, 0);
 });
 
 function syncTimeout(array, i){
