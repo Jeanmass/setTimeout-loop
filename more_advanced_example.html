@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Synchronous setTimeout Example</title>
+  <style>
+  #blinker {
+    height: 100px;
+    width: 200px;
+    background-color: blue;
+  }
+  </style>
+</head>
+
+<body>
+  <h1>Morse Blinker</h1>
+  <div id="blinker"></div>
+  <button id="button">Make it blink in morse</button>
+
+  <script>
+
+  var morsecode = "... -.-- -. -.-. .... .-. --- -. --- ..- ... / ... . - - .. -- . --- ..- - / .-.. --- --- .--.";
+
+  document.getElementById('button').onclick = function(){
+    blink(morsecode, 0); // we call the function with the string and the position in the string we want to start our loop
+  }
+
+  function changeColor(color){ // since we are going to change the color several times, we create a function to do that
+    document.getElementById("blinker").style.backgroundColor = color;
+  }
+
+  function blink(string, i) {
+    var c = string.substring(i, i+1); // we store in a variable the character of the string we want to treat
+    changeColor("blue"); // we reset the color to blue
+    if (c === "-") {
+      red(string, i, 750); // if the character is a dash, we want to change the color of the div to red for 750 ms
+    } else if (c === "."){
+      red(string, i, 250); // if it is a dot, we want to do the same thing for 250 ms
+    } else if (c === "/") {
+      bigpause(string, i); // if it is a slash, we want to wait for 1500ms
+    } else {
+      lilpause(string, i); // if the character is a space or anything else, we just wait for a little while like we would between two characters
+    }
+  };
+
+  function red(string, i, time){ // this function change the color of the div to red for a certain amount of time
+    changeColor("red"); // we change the color to red
+    setTimeout(function() {
+      changeColor("blue"); // after the amount of time wanted, we change the color back to blue
+      lilpause(string,i); // then we go to lilpause(), which will exit the loop if there is no more character to treat, or wait for a little while and call blink() again
+    }, time);
+  };
+
+  function bigpause(string, i){ // this function is pretty self explanatory, it just waits for 1500 ms before calling lilpause()
+    setTimeout(function(){
+      lilpause(string,i);
+    }, 1500);
+  };
+
+  function lilpause(string, i){ // this function is called everytime we finish treating a character of the string
+    i = i+1; // we increment i to let blink() know the it must treat the next character when we call it again
+    if (i < string.length) { // we check if there is more character in the string
+      setTimeout(function(){ // if there is more, we wait for 250 ms before calling blink() again
+        blink(string, i);
+      }, 250);
+    } // if it is the end of the string, it will exit the loop, but it could do something else with a "else" statement
+  };
+
+  </script>
+</body>
+</html>

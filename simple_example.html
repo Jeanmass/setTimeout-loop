@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Synchronous setTimeout Example</title>
+</head>
+
+<body>
+  <h1>Simple example</h1>
+  <button id="button">Look at your console and click me</button>
+
+  <script>
+  /* In this example, we want to do certain things for every element in an array, but we want to wait for the array element to be
+  treated before letting the loop continue. */
+
+  var array = ["un", "deux", "trois"];
+
+  document.getElementById("button").onclick = function (){
+    // we call the function with two parameters : the array and the position of the element in the array we want to start with.
+    synTimeout(array, 0);
+  };
+
+  function synTimeout(array, i) {
+    if (i < array.length) { // we check if there is another element in the array
+      setTimeout(function(){
+        // Here you can do anything that you want to happen after a specific amount of time, for the example we print the element in the console
+        console.log(array[i]);
+        i = i+1; // we increment i to let the syncTimeout() function know that it must treat the next element when we call it again later
+        synTimeout(array, i); // We call synTimeout() again with incremented i as parameter
+      }, 1000); // the amount of time in ms you want to wait before your the treatment of the element
+    } else {
+      // if there is no more element in the array, you can call another function or just leave the else blank to end the loop
+      console.log("Finished !")
+    }
+  };
+
+  </script>
+</body>
+</html>
