@@ -26,7 +26,7 @@ function syncTimeout(array, i){
     setTimeout(function(){
       whateverYouwant();
       i = i+1;
-      synTimeout(array, i);
+      syncTimeout(array, i);
     }, 100);
   } else {
 
