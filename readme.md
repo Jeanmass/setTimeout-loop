@@ -16,6 +16,7 @@ Feel free to contact me with any comment, suggestion or alternative technique.
 
 # Code you can copy and adapt to your needs 
 
+```
 function main(){
   syncTimeout(array, 0);
 });
@@ -35,6 +36,6 @@ function operation(array, i){
 
   }
 };
-
+```
 
 ---------
