@@ -7,7 +7,8 @@ As a beginner in javascript, i had a hard time finding a clear and comprehensibl
 
 I imagine this is probably not the best way to do this, but it has the advantage of being pretty easy, especially for a beginner. 
 
-Check out the two examples to learn about this technique. 
+Check out the two examples to learn about this technique.
+You can use this to test the examples : http://htmlpreview.github.io/
 
 Feel free to contact me with any comment, suggestion or alternative technique. 
  
