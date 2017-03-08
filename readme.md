@@ -21,11 +21,7 @@ function main(){
   syncTimeout(array, 0);
 });
 
-function synTimeout(array, i) {
-  operation(array, i);
-};
-
-function operation(array, i){
+function syncTimeout(array, i){
   i = i+1;
   if (i < array.length) {
     setTimeout(function(){
