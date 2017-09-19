@@ -1,7 +1,6 @@
-# Synchronous setTimeout loop
+# Synchronous 
 
-
-In javascript, loops like for...of are asynchronous, which means that setTimeout will not work properly if you use it in a loop. If you want to loop through an array or a string synchronously, you have to come up with another solution. 
+In javascript, loops like for...of are synchronous, but setTimeout will not work properly if you use it in a loop because while the execution is delayed by setTimeout, your program will continue to loop through the following items in your array. If you want to loop through an array or a string synchronously while delaying execution with setTimeout, you have to come up with another solution. 
 
 As a beginner in javascript, i had a hard time finding a clear and comprehensible solution to this problem. So when i found one, i decided to share it in the most beginner friendly way i could.
 
