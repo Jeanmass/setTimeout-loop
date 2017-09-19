@@ -1,4 +1,4 @@
-# Synchronous 
+# How to keep a loop "synchronous" while using setTimeout?
 
 Let's say you want to execute a function for every items in a array, but you want to make sure that your program waits for a specific amount of time before looping through the next item. Just use the setTimeout function, you would say with confidence? Well that's more tricky than it looks.
 
@@ -15,7 +15,7 @@ Feel free to contact me with any comment, suggestion or alternative technique.
  
 ------------
 
-# Code you can copy and adapt to your needs 
+## Code you can copy and adapt to your needs 
 
 ```
 syncTimeout(yourArray, 0);
